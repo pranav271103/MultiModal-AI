@@ -4,14 +4,13 @@ This repository contains modular code for a multimodal AI project built to handl
 
 ---
 
-## 💡 System Requirements
+## System Requirements
 - Python 3.9 or higher  
 - GPU recommended (NVIDIA CUDA supported)  
-- Tested on Windows 11 and Google Colab  
 
 ---
 
-## ⚙️ Ollama Model Installation
+## Ollama Model Installation
 
 Before running any notebook, install and configure **Ollama** to enable local LLM usage.
 
@@ -26,9 +25,9 @@ ollama pull granite3-dense:2b
 
 ---
 
-## 🧑‍💻 Notebook Overview
+## Notebook Overview
 
-### 🎙️ 1. AudioPart.ipynb  
+### 1. AudioPart.ipynb  
 This notebook converts audio files (MP3/WAV) into text using Google Speech Recognition and transcribes the audio into meaningful responses with the help of Ollama's Granite3-Dense LLM.
 
 **How to Run:**
@@ -42,7 +41,7 @@ pip install speechrecognition pydub langchain langchain_ollama
 
 ---
 
-### 🎬 2. VideoEncoding.ipynb  
+### 2. VideoEncoding.ipynb  
 This notebook extracts frames from a video, generates captions using the BLIP model, transcribes audio using Wav2Vec2, and summarizes the combined information via Ollama LLM.
 
 **How to Run:**
@@ -56,7 +55,7 @@ pip install opencv-python-headless torch torchvision transformers tqdm librosa l
 
 ---
 
-### 🔼️ 3. ImagePart.ipynb  
+### 3. ImagePart.ipynb  
 Processes images to detect objects using YOLOv8, generates semantic labels using CLIP, and creates a descriptive summary using Ollama's LLM.
 
 **How to Run:**
@@ -69,7 +68,7 @@ pip install ultralytics torch torchvision openai-clip langchain_ollama
 
 ---
 
-### 📚 4. CombinedAi.ipynb (Text Part)  
+### 4. CombinedAi.ipynb (Text Part)  
 Processes text documents like PDF files, splits them into chunks, stores them in a vector database, and uses Ollama LLM for semantic Q&A and web-augmented search.
 
 **How to Run:**
@@ -82,10 +81,9 @@ pip install langchain langchain_community langchain_ollama chromadb tavily-clien
 
 ---
 
-## 🏁 Final Note
+##  Final Note
 
 This repo is modular and designed for clear demonstration of multimodal pipelines — you can run each notebook independently depending on the data type you want to process.
 
 ---
 
-Happy experimenting! 🚀
