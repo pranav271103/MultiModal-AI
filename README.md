@@ -2,6 +2,8 @@
 
 This repository contains modular code for a multimodal AI project built to handle four different types of human-like data inputs: Audio, Video, Images, and Text. The solution uses open-source tools such as LangChain, BLIP, CLIP, YOLO, ResNet, Wav2Vec2, and Ollama models for semantic analysis.
 
+Research Active
+
 ---
 
 ## System Requirements
