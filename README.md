@@ -80,77 +80,103 @@ image_result = pipeline.process_image("path/to/image.jpg")
 video_result = pipeline.process_video("path/to/video.mp4")
 ```
 
-## Mermaid Flowcharts with Technology Stack
+## Pipeline Architecture
 
 ### 1. Text Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Raw Text] --> B[Text Normalization (NLTK, spaCy)]
-    B --> C[Tokenization (HuggingFace Tokenizers)]
-    C --> D[Embedding Generation (BERT, RoBERTa)]
-    D --> E[Feature Extraction (CLIP Text, USE)]
-    E --> F[Sentiment Analysis (VADER, TextBlob)]
-    E --> G[Named Entity Recognition (spaCy, BERT-NER)]
-    E --> H[Topic Modeling (LDA, BERTopic)]
+    A[Raw Text] --> B[Text Normalization]
+    B --> C[Tokenization]
+    C --> D[Embedding Generation]
+    D --> E[Feature Extraction]
+    E --> F[Sentiment Analysis]
+    E --> G[Named Entity Recognition]
+    E --> H[Topic Modeling]
     F --> I[Results Aggregation]
     G --> I
     H --> I
-    I --> J[Output (JSON/Protobuf)]
+    I --> J[Output]
 ```
 
 ### 2. Audio Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Audio Input] --> B[Pre-processing (Librosa, TorchAudio)]
-    B --> C[Noise Reduction (RNNoise, Spectral)]
-    C --> D[Feature Extraction (MFCC, Wav2Vec)]
-    D --> E[Speech Recognition (Whisper, Wav2Vec2)]
-    D --> F[Speaker Diarization (PyAnnote)]
-    D --> G[Emotion Detection (SEResNet)]
-    E --> H[Text Processing (NLP)]
-    F --> I[Speaker Analysis (ECAPA-TDNN)]
-    G --> J[Emotion Analysis (Wav2Vec2)]
-    H --> K[Results Fusion (Attention)]
+    A[Audio Input] --> B[Pre-processing]
+    B --> C[Noise Reduction]
+    C --> D[Feature Extraction]
+    D --> E[Speech Recognition]
+    D --> F[Speaker Diarization]
+    D --> G[Emotion Detection]
+    E --> H[Text Processing]
+    F --> I[Speaker Analysis]
+    G --> J[Emotion Analysis]
+    H --> K[Results Fusion]
     I --> K
     J --> K
-    K --> L[Output (JSON)]
+    K --> L[Output]
 ```
 
 ### 3. Image Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Image Input] --> B[Pre-processing (OpenCV)]
-    B --> C[Object Detection (YOLOv8, R-CNN)]
-    B --> D[Feature Extraction (CLIP, ResNet)]
-    B --> E[OCR (Tesseract, EasyOCR)]
-    C --> F[Object Analysis (YOLO+DeepSORT)]
-    D --> G[Image Captioning (BLIP)]
-    E --> H[Text Extraction (Tesseract)]
+    A[Image Input] --> B[Pre-processing]
+    B --> C[Object Detection]
+    B --> D[Feature Extraction]
+    B --> E[OCR]
+    C --> F[Object Analysis]
+    D --> G[Image Captioning]
+    E --> H[Text Extraction]
     F --> I[Results Aggregation]
     G --> I
     H --> I
-    I --> J[Output (JSON)]
+    I --> J[Output]
 ```
 
 ### 4. Video Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Video Input] --> B[Frame Extraction (OpenCV)]
-    B --> C[Keyframe Selection (FFmpeg)]
-    C --> D[Frame Processing (YOLO, CLIP)]
-    D --> E[Object Tracking (DeepSORT)]
-    D --> F[Action Recognition (TimeSformer)]
-    D --> G[Scene Detection (PySceneDetect)]
-    E --> H[Temporal Analysis (3D CNNs)]
+    A[Video Input] --> B[Frame Extraction]
+    B --> C[Keyframe Selection]
+    C --> D[Frame Processing]
+    D --> E[Object Tracking]
+    D --> F[Action Recognition]
+    D --> G[Scene Detection]
+    E --> H[Temporal Analysis]
     F --> H
     G --> H
     H --> I[Results Fusion]
-    I --> J[Output (JSON/Video)]
+    I --> J[Output]
 ```
+
+## Technology Stack
+
+### Text Processing
+- **Tokenization**: HuggingFace Tokenizers
+- **Embeddings**: BERT, RoBERTa, Sentence-Transformers
+- **NLP**: spaCy, NLTK, Transformers
+- **Feature Extraction**: CLIP Text, Universal Sentence Encoder
+
+### Audio Processing
+- **Pre-processing**: Librosa, TorchAudio
+- **Speech Recognition**: Whisper, Wav2Vec2
+- **Speaker Diarization**: PyAnnote, SpeechBrain
+- **Emotion Detection**: Wav2Vec2-Emotion, SEResNet
+
+### Image Processing
+- **Computer Vision**: OpenCV, Albumentations
+- **Object Detection**: YOLOv8, Faster R-CNN
+- **Feature Extraction**: CLIP, BLIP, ResNet
+- **OCR**: Tesseract, EasyOCR
+
+### Video Processing
+- **Frame Processing**: OpenCV, Decord
+- **Object Tracking**: DeepSORT, ByteTrack
+- **Action Recognition**: TimeSformer, MoViNet
+- **Scene Detection**: PySceneDetect, TransNetV2
 
 ## Project Structure
 
