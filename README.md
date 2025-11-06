@@ -86,70 +86,70 @@ video_result = pipeline.process_video("path/to/video.mp4")
 
 ```mermaid
 flowchart TD
-    A[Raw Text] --> B[Text Normalization \n (NLTK, spaCy)]
-    B --> C[Tokenization \n (HuggingFace Tokenizers)]
-    C --> D[Embedding Generation \n (BERT, RoBERTa, Sentence-Transformers)]
-    D --> E[Feature Extraction \n (CLIP Text Encoder, Universal Sentence Encoder)]
-    E --> F[Sentiment Analysis \n (VADER, TextBlob, Transformers)]
-    E --> G[Named Entity Recognition \n (spaCy NER, BERT-NER)]
-    E --> H[Topic Modeling \n (LDA, BERTopic)]
+    A[Raw Text] --> B[Text Normalization (NLTK, spaCy)]
+    B --> C[Tokenization (HuggingFace Tokenizers)]
+    C --> D[Embedding Generation (BERT, RoBERTa)]
+    D --> E[Feature Extraction (CLIP Text, USE)]
+    E --> F[Sentiment Analysis (VADER, TextBlob)]
+    E --> G[Named Entity Recognition (spaCy, BERT-NER)]
+    E --> H[Topic Modeling (LDA, BERTopic)]
     F --> I[Results Aggregation]
     G --> I
     H --> I
-    I --> J[Output \n (JSON/Protobuf)]
+    I --> J[Output (JSON/Protobuf)]
 ```
 
 ### 2. Audio Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Audio Input] --> B[Pre-processing \n (Librosa, TorchAudio)]
-    B --> C[Noise Reduction \n (RNNoise, Spectral Gating)]
-    C --> D[Feature Extraction \n (MFCC, Mel-Spectrograms, Wav2Vec)]
-    D --> E[Speech Recognition \n (Whisper, Wav2Vec2, DeepSpeech)]
-    D --> F[Speaker Diarization \n (PyAnnote, SpeechBrain)]
-    D --> G[Emotion Detection \n (wav2vec2-emotion, SEResNet)]
-    E --> H[Text Processing \n (NLP Pipeline)]
-    F --> I[Speaker Analysis \n (ECAPA-TDNN, x-vectors)]
-    G --> J[Emotion Analysis \n (Wav2Vec2-Emotion)]
-    H --> K[Results Fusion \n (Attention Mechanisms)]
+    A[Audio Input] --> B[Pre-processing (Librosa, TorchAudio)]
+    B --> C[Noise Reduction (RNNoise, Spectral)]
+    C --> D[Feature Extraction (MFCC, Wav2Vec)]
+    D --> E[Speech Recognition (Whisper, Wav2Vec2)]
+    D --> F[Speaker Diarization (PyAnnote)]
+    D --> G[Emotion Detection (SEResNet)]
+    E --> H[Text Processing (NLP)]
+    F --> I[Speaker Analysis (ECAPA-TDNN)]
+    G --> J[Emotion Analysis (Wav2Vec2)]
+    H --> K[Results Fusion (Attention)]
     I --> K
     J --> K
-    K --> L[Output \n (Structured JSON)]
+    K --> L[Output (JSON)]
 ```
 
 ### 3. Image Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Image Input] --> B[Pre-processing \n (OpenCV, Albumentations)]
-    B --> C[Object Detection \n (YOLOv8, Faster R-CNN)]
-    B --> D[Feature Extraction \n (CLIP, BLIP, ResNet-50/101)]
-    B --> E[OCR \n (EasyOCR, Tesseract)]
-    C --> F[Object Analysis \n (YOLO + DeepSORT)]
-    D --> G[Image Captioning \n (BLIP, CLIPCap)]
-    E --> H[Text Extraction \n (Tesseract, PaddleOCR)]
-    F --> I[Results Aggregation \n (Feature Concatenation)]
+    A[Image Input] --> B[Pre-processing (OpenCV)]
+    B --> C[Object Detection (YOLOv8, R-CNN)]
+    B --> D[Feature Extraction (CLIP, ResNet)]
+    B --> E[OCR (Tesseract, EasyOCR)]
+    C --> F[Object Analysis (YOLO+DeepSORT)]
+    D --> G[Image Captioning (BLIP)]
+    E --> H[Text Extraction (Tesseract)]
+    F --> I[Results Aggregation]
     G --> I
     H --> I
-    I --> J[Output \n (Structured JSON)]
+    I --> J[Output (JSON)]
 ```
 
 ### 4. Video Processing Pipeline
 
 ```mermaid
 flowchart TD
-    A[Video Input] --> B[Frame Extraction \n (OpenCV, Decord)]
-    B --> C[Keyframe Selection \n (FFmpeg, PySceneDetect)]
-    C --> D[Frame Processing \n (YOLOv8, CLIP, BLIP)]
-    D --> E[Object Tracking \n (ByteTrack, DeepSORT)]
-    D --> F[Action Recognition \n (TimeSformer, MoViNet)]
-    D --> G[Scene Detection \n (PySceneDetect, TransNetV2)]
-    E --> H[Temporal Analysis \n (3D CNNs, Transformers)]
+    A[Video Input] --> B[Frame Extraction (OpenCV)]
+    B --> C[Keyframe Selection (FFmpeg)]
+    C --> D[Frame Processing (YOLO, CLIP)]
+    D --> E[Object Tracking (DeepSORT)]
+    D --> F[Action Recognition (TimeSformer)]
+    D --> G[Scene Detection (PySceneDetect)]
+    E --> H[Temporal Analysis (3D CNNs)]
     F --> H
     G --> H
-    H --> I[Results Fusion \n (Cross-modal Attention)]
-    I --> J[Output \n (Structured JSON/Video)]
+    H --> I[Results Fusion]
+    I --> J[Output (JSON/Video)]
 ```
 
 ## Project Structure
